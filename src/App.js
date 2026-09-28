@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
-import { Container, Navbar, Nav, Button, Col, Row } from "react-bootstrap";
+import { Container, Navbar, Nav, Button, Col, Row, Carousel, Card, Form } from "react-bootstrap";
 import HeroImg from "./Assets/Hero.png";
 import AboutImg from "./Assets/About.png";
+
 
 const Doctor = {
   name: "Dr. John Doe",
@@ -155,10 +156,223 @@ function Skills(){
   );
 }
 
+function Testimonial(){
+  return(
+    <section id="testimonials" className="section">
+      <Container>
+        <h2 className="text-center my-5">Testimonials</h2>
+        <Carousel data-bs-theme="light" className="my-5">
+      <Carousel.Item>
+        <Card>
+      <Card.Body>
+        <blockquote className="blockquote mb-0">
+          <p>
+            She explained my test results without rushing and I finally understood my diabetes.
+          </p>
+          <footer className="blockquote-footer">
+            "Rafique, <cite title="Source Title">patient since 2020"</cite>
+          </footer>
+        </blockquote>
+      </Card.Body>
+    </Card>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Card>
+      <Card.Body>
+        <blockquote className="blockquote mb-0">
+          <p>
+            Every visit feels unhurried. She remembers the details of my mother's care too.
+          </p>
+          <footer className="blockquote-footer">
+            "Farhana, <cite title="Source Title">patient since 2022"</cite>
+          </footer>
+        </blockquote>
+      </Card.Body>
+    </Card>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Card>
+      <Card.Body>
+        <blockquote className="blockquote mb-0">
+          <p>
+            The clinic is organised and she always answers my follow-up questions.
+          </p>
+          <footer className="blockquote-footer">
+            "Karim,  <cite title="Source Title">patient since 2018"</cite>
+          </footer>
+        </blockquote>
+      </Card.Body>
+    </Card>
+      </Carousel.Item>
+    </Carousel>
+      </Container>
+     </section>
+  );
+}
+function Locations(){
+  return(
+    <section id="locations" className="section">
+      <Container>
+        <h2 className="text-center my-5">Our Locations</h2>
+        <Row>
+          <Col md={6}>
+            <h3 className="fs-4 mb-3">Medix</h3>
+            <p className="text-body-secondary">
+              123 Main Street, Dhaka, Bangladesh
+            </p>
+            <a href="tel:0123456789">0123456789</a>
+          </Col>
+          <Col md={6}>
+            <h3 className="fs-4 mb-3">Intensive Care</h3>
+            <p className="text-body-secondary">
+              456 Secondary Road, Chittagong, Bangladesh
+            </p>
+            <a href="tel:0123456789">0123456789</a>
+          </Col>
+    
+        </Row>
+      </Container>
+      </section>
+);
+}
 
+function AppointmentForm() {
+  return (
+    <section id="book" className="section">
+      <Container>
+        <h2 className="text-center my-5">Book an Appointment</h2>
+        <Row className="align-items-center">
+          <Col md={6}>
+            <h3>Book an Appointment</h3>
+            <p>Choose a convenient time and date for your visit.</p>
+          </Col>
+          <Col md={6}>
+            <Form className="p-4 border rounded">
+              <Row>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Full Name</Form.Label>
+                  <Form.Control type="text" placeholder="" />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control type="tel" />  
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Clinic</Form.Label>
+                  <Form.Select>
+                    <option>Medix</option>
+                    <option>Intensive Care</option>
+                  </Form.Select>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Reason for Visit</Form.Label>
+                  <Form.Select>
+                    <option>General Checkup</option>
+                    <option>Follow-up</option>
+                  </Form.Select>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Preferred Date</Form.Label>
+                  <Form.Control type="date" />
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Time of day</Form.Label>
+                  <Form.Select>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+                  </Form.Select>
+                </Col>
 
+              </Row>
+              <Button className="bg-info" type="submit">Request Appointment</Button>
 
+            </Form>
+          
+          </Col>
+        </Row>
+      </Container>
+      
+      </section>
 
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="contact-section">
+      <Container>
+        <h2 className="text-center my-5">Contact Us</h2>
+        <Row className="align-items-center">
+
+          {/* Left Side */}
+          <Col md={6}>
+            <h2>Contact us</h2>
+
+            <p>
+              Have a question or need help? Send us a message and
+              our team will get back to you soon.
+            </p>
+
+            <div className="contact-info">
+              <p><strong>📍 Address:</strong> 123 Main Street, Chattogram</p>
+              <p><strong>📞 Phone:</strong> +880 1234-567890</p>
+              <p><strong>✉ Email:</strong> info@citycare.com</p>
+              <p><strong>🕒 Hours:</strong> Sat - Thu, 9:00 AM - 8:00 PM</p>
+            </div>
+          </Col>
+
+          {/* Right Side */}
+          <Col md={6}>
+            <Form className="p-4 border rounded">
+
+              <Row>
+                <Col md={6} className="mb-3">
+                  <Form.Label>Full name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Your name"
+                  />
+                </Col>
+
+                <Col md={6} className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Your email"
+                  />
+                </Col>
+              </Row>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Subject</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Subject"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={5}
+                  placeholder="Write your message..."
+                />
+              </Form.Group>
+
+              <Button className="bg-info" type="submit">
+                Send message
+              </Button>
+
+            </Form>
+          </Col>
+
+        </Row>
+      </Container>
+    </section>
+  );
+}
 
 export default function App() {
   return (
@@ -168,6 +382,10 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <Testimonial />
+        <Locations />
+        <AppointmentForm />
+        <Contact />
       </main>
     </>
   );
